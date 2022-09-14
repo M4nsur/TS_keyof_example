@@ -25,3 +25,16 @@ const getValue = <T, K extends keyof T>(obj: T, key: K) => {
 
 
 console.log(getValue(user, "age") )
+
+//Глава 8 (70) keyof + typeof (извлекаем ключи из объекта)
+
+ let strOrNumber: string | number  // мы можем с помощью "typeof" обозначить типы (на данный момент union) от другой переменной, 
+ let param: typeof strOrNumber    // т.е переиспользовать их. 
+
+
+const obj = {
+    name: "Бобо",
+    age: 44,
+}
+
+let keyOfUser: keyof typeof obj = "name" // комбинация keyof + typeof позволяет нам извлечь ключи из объекта, а затем присвоить их в качестве типав
